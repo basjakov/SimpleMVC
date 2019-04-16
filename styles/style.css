@@ -1,0 +1,42 @@
+#form{
+	    width: 200px;
+    margin: 0 auto;
+
+}
+input{
+  width: 100%;
+  padding: 8px 6px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+textarea{
+  border: 2px solid black;
+  border-radius: 4px;
+}
+button{
+    background-color: #0075ff;
+    border: none;
+    color: white;
+    padding: 9px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#rows{
+    width: 52%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+#rows > div{
+	padding: 13px;
+    border: 1px solid blue;
+    text-align: left;
+
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
