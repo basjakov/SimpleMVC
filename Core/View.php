@@ -13,6 +13,7 @@ namespace Core;
 {
 
     public $path;
+    public $route;
     public $layout = 'default';
 
 
@@ -20,14 +21,37 @@ namespace Core;
     {
             $this->route = $route;
             $this->path = $route['controller'].'/'.$route['action'];
-            echo $this->path;
+
     }
 
     public function render($title,$vars = []){
-        ob_start();
-        require 'view/'.$this->path.'.php';
-
-        $content = ob_get_clean();
-        require 'view/layouts/'.$this->layout.'.php';
+        extract($vars);
+        $path = 'view/'.$this->path.'.php';
+        if(file_exists( $path)){
+            ob_start();
+            require  $path;
+            $content = ob_get_clean();
+            require 'view/layouts/'.$this->layout.'.php';
+        }
+        else {
+             echo "view layout not found";
+            }
     }
+     public function  redirect($url){
+                header('location: '.$url);
+                exit;
+     }
+    public static function errorrequest($code){
+        http_response_code($code);
+        $path =  require 'view/errors/'.$code.'.php';
+        if(file_exists($path))
+        {
+            require  $path;
+            exit;
+        }
+
+
+    }
+
+
 }

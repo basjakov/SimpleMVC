@@ -9,10 +9,21 @@
 namespace controllers;
 
 use Core\Controller;
+use lib\Db;
 
 class index extends Controller
 {
         public function index(){
-            $this->view->render('index');
+            $db = new Db();
+
+
+            $params = [
+              'id'=>1,
+            ];
+            $data = $db->column('SELECT name FROM users WHERE id=:id',$params);
+
+            var_dump($data);
+
+            $this->view->render('Welcome');
         }
 }

@@ -1,6 +1,7 @@
 <?php 
 namespace Router;
 
+use core\view;
 
 class Router{
 
@@ -49,16 +50,16 @@ class Router{
 
 				}
 				else{
-					echo "Action not found:  ".$action;
+					View::errorrequest(404);
 				}
 			}
 			else{
-				echo "this controller is not exist  ".$path;
+                View::errorrequest(404);
 			}
 		}
 		else{
 
-			echo "router not find";
+            View::errorrequest(404);
 		};
 	}
 }

@@ -7,3 +7,8 @@
  */
 ?>
 <h1>Home page </h1>
+
+<p>Name :<?php echo $name;?></p>
+<p>Age :<?php echo $age;?></p>
+
+<p>db :<?php echo $db;?></p>

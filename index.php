@@ -18,7 +18,7 @@ spl_autoload_register(function ($class) {
 $router = new Router;
 
 $router->add('posts',["controller"=>"posts","action"=>"index"]);
-$router->add('add',["controller"=>"index","action"=>"index"]);
+$router->add('',["controller"=>"index","action"=>"index"]);
 
 $router->run();
 
