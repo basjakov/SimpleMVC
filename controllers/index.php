@@ -9,21 +9,25 @@
 namespace controllers;
 
 use Core\Controller;
+
 use lib\Db;
+
 
 class index extends Controller
 {
         public function index(){
-            $db = new Db();
-
-
-            $params = [
-              'id'=>1,
+            $result = $this->model->getNews();
+            $vars = [
+                'news' => $result,
             ];
-            $data = $db->column('SELECT name FROM users WHERE id=:id',$params);
+            $this->view->render("Home page" ,$vars);
+        }
 
-            var_dump($data);
+        public function  loginstore()
+        {
 
-            $this->view->render('Welcome');
+               $this->view->redirect('https://www.google.com');
+
+
         }
 }

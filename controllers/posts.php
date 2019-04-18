@@ -13,6 +13,7 @@ use Core\Controller;
 class posts extends  Controller
 {
         public function index(){
+
                 $this->view->render('Home page');
         }
 }

@@ -27,7 +27,9 @@ namespace Core;
     public function render($title,$vars = []){
         extract($vars);
         $path = 'view/'.$this->path.'.php';
-        if(file_exists( $path)){
+
+        if(file_exists($path)){
+
             ob_start();
             require  $path;
             $content = ob_get_clean();
