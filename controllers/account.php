@@ -20,7 +20,9 @@ class account extends Controller
             }
             public function loginstore()
             {
-                        header("Location: http://www.redirect.to.url.com/");
+                        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                                    echo "Working Posts request";
+                        }
             }
 
             //Register actions
