@@ -11,11 +11,23 @@ class Router{
 
 
 
-	public function add($route,$params){
+	public function add($route,$params,$type){
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $route = '#^' . $route . '$#';
             $this->routes[$route] = $params;
+            // The request is using the POST method
+        }
+        else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+            $route = '#^' . $route . '$#';
+            $this->routes[$route] = $params;
+            // The request is using the POST method
+        }
+        else{
+            echo "You dont have right request";
+        }
 
 	}
 

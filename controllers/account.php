@@ -19,10 +19,10 @@ class account extends Controller
                         $this->view->render('Welcome login page');
             }
             public function loginstore()
+
             {
-                        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-                                    echo "Working Posts request";
-                        }
+
+                        $this->view->render('Welcome login page');
             }
 
             //Register actions
